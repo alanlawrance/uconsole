@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &175236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 475236}
+  - component: {fileID: 11401018}
+  m_Layer: 0
+  m_Name: uConsole
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &475236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175236}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11401018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4423e4ff7c0871843a4cf81fa295b481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ConsoleHeightNormalized: 0.4
+  m_LogFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_LogFontSize: 25
+  m_LogBackGroundColor: {r: 1, g: 1, b: 1, a: 1}
+  m_LogFontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_LogXOffset: 15
+  m_Activate: 96
+  m_Submit: 13
+  m_AutoComplete: 9
+  m_HistoryUp: 273
+  m_HistoryDown: 274
+  m_ScrollLogUp: 280
+  m_ScrollLogDown: 281
+  m_SecondsToAnimateDown: 0.2
+  m_SecondsToAnimateUp: 0.1
+  m_MaxHistoryLines: 128
+  m_MaxLogLines: 2048
+  m_DoNotDestroy: 1
+  m_LogUnityMessages: 0
+  m_InputFieldHeight: 50
+  m_InputFieldFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_InputFieldFontSize: 25
+  m_InputFieldBackGroundColor: {r: 1, g: 1, b: 1, a: 1}
+  m_InputFieldFontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_InputFieldXOffset: 15
