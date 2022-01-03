@@ -17,3 +17,11 @@ Key features
 * Highly configurable
 * Command auto complete
 * Command history
+* Command Search
+
+
+Integration
+---
+Just drag the uConsole prefab into a scene.
+
+Another option is to instantiate the prefab in script and mark as DoNotDestroy.
