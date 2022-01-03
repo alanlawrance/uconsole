@@ -48,7 +48,6 @@ MonoBehaviour:
   m_LogFontSize: 25
   m_LogBackGroundColor: {r: 1, g: 1, b: 1, a: 1}
   m_LogFontColor: {r: 0, g: 0, b: 0, a: 1}
-  m_LogXOffset: 15
   m_Activate: 96
   m_Submit: 13
   m_AutoComplete: 9
@@ -61,10 +60,9 @@ MonoBehaviour:
   m_MaxHistoryLines: 128
   m_MaxLogLines: 2048
   m_DoNotDestroy: 1
-  m_LogUnityMessages: 0
+  m_LogUnityMessages: 1
   m_InputFieldHeight: 50
   m_InputFieldFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_InputFieldFontSize: 25
   m_InputFieldBackGroundColor: {r: 1, g: 1, b: 1, a: 1}
   m_InputFieldFontColor: {r: 0, g: 0, b: 0, a: 1}
-  m_InputFieldXOffset: 15

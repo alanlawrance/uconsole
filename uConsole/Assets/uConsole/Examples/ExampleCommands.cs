@@ -5,58 +5,25 @@ public class ExampleCommands : MonoBehaviour
 {
 	void Start()
 	{
-		uConsole.RegisterCommand("EchoNothing", EchoNothing);
-		uConsole.RegisterCommand("EchoInteger", EchoInteger);
-		uConsole.RegisterCommand("EchoFloat", EchoFloat);
-		uConsole.RegisterCommand("EchoBool", EchoBool);
-		uConsole.RegisterCommand("EchoString", EchoString);
-		uConsole.RegisterCommand("EchoStrings", EchoStrings);
-		uConsole.RegisterCommand("LoadScene", LoadScene);
+		uConsole.RegisterCommand("fov", "change field of view of main camera", fov);
+		uConsole.RegisterCommand("load_scene", "sychronously load new scene", LoadScene);
 	}
 
-	void OnDestroy()
+	private static void fov()
 	{
-		uConsole.UnRegisterCommand("EchoNothing");
-		uConsole.UnRegisterCommand("EchoInteger");
-		uConsole.UnRegisterCommand("EchoFloat");
-		uConsole.UnRegisterCommand("EchoBool");
-		uConsole.UnRegisterCommand("EchoString");
-		uConsole.UnRegisterCommand("EchoStrings");
-	}
-	
-	public void EchoNothing()
-	{
-		uConsole.Log("Test Command Executed at time: " + Time.time);
-	}
-
-	public void EchoInteger()
-	{
-		uConsole.Log("Integer Entered: " + uConsole.GetInt().ToString());
-	}
-
-	public void EchoFloat()
-	{
-		uConsole.Log("Float Entered: " + uConsole.GetFloat().ToString ());
-	}
-
-	public void EchoBool()
-	{
-		if (uConsole.GetBool()) {
-			uConsole.Log("Bool Entered: TRUE");
-		} else {
-			uConsole.Log("Bool Entered: FALSE");
+		if (!Camera.main) {
+			Debug.LogWarningFormat("Trying to set FOV but no main camera is defined");
+			return;
 		}
-	}
 
-	public void EchoString()
-	{
-		uConsole.Log("String Entered: " + uConsole.GetString());
-	}
+		if (uConsole.GetNumParameters() == 0) {
+			Debug.LogFormat("Current Camera FOV is {0} degrees", Camera.main.fieldOfView);
+			return;
+		}
 
-	public void EchoStrings()
-	{
-		uConsole.Log("String Entered 1: " + uConsole.GetString());
-		uConsole.Log("String Entered 2: " + uConsole.GetString());
+		float fov = uConsole.GetFloat();
+		Camera.main.fieldOfView = fov;
+		Debug.LogFormat("Camera FOV set to {0} degrees", Camera.main.fieldOfView);
 	}
 
 	public static void LoadScene()
