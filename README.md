@@ -1,7 +1,7 @@
 What is this?
 ---
 
-In game console that allows for easy set up of commands with parameters.
+In game console for Unity3D that allows for easy set up of commands with parameters.
 
 
 Why is this needed?
