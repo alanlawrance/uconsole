@@ -1,5 +1,28 @@
 workflows:
-  hello-world:
-    name: Hello world workflow
-    scripts:
-        - echo "Hello World!"
+  unity-win64-workflow:
+      name: Unity Win64 Workflow
+      environment:
+        groups:
+          # Add the group environment variables in Codemagic UI (either in Application/Team variables) - https://docs.codemagic.io/variables/environment-variable-groups/
+          - unity # <-- (Includes UNITY_SERIAL, UNITY_USERNAME, UNITY_PASSWORD)
+        vars:
+          UNITY_BIN: $UNITY_HOME/Contents/MacOS/Unity
+          BUILD_SCRIPT: BuildWin64
+      triggering:
+        events:
+          - push
+        branch_patterns:
+          - pattern: 'feat-art/*'
+            include: true
+            source: true
+      scripts:
+        - name: Activate License
+          script: $UNITY_BIN -batchmode -quit -logFile -serial ${UNITY_SERIAL?} -username ${UNITY_USERNAME?} -password ${UNITY_PASSWORD?}
+        - name: Build
+          script: $UNITY_BIN -batchmode -quit -logFile -projectPath . -executeMethod BuildScript.$BUILD_SCRIPT -nographics
+      artifacts:
+        - "win64/uConsole"
+      publishing:
+        scripts:
+          - name: Deactivate License
+            script: $UNITY_BIN -batchmode -quit -returnlicense -nographics
